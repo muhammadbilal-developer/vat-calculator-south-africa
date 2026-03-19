@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VAT Calculator · South Africa</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="vat-calculator-sa.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+  <header class="header">
+    <div class="header-eyebrow">South Africa</div>
+    <h1><em>VAT</em> Calculator</h1>
+    <p class="header-sub">
+      Instant calculations for South African Value Added Tax
+      <span class="vat-badge">15%</span>
+    </p>
+  </header>
+
+  <div class="calculators-grid">
+
+    <!-- ADD VAT CARD -->
+    <div class="card card--add" role="region" aria-label="Calculator to Add VAT">
+      <h2 class="card-title">Add / Include VAT</h2>
+
+      <div class="input-group">
+        <label class="input-label" for="add-input">Rand Amount</label>
+        <div class="input-row">
+          <span class="currency-prefix" aria-hidden="true">R</span>
+          <input
+            id="add-input"
+            class="amount-input"
+            type="number"
+            inputmode="decimal"
+            placeholder="0.00"
+            min="0"
+            step="0.01"
+            aria-label="Enter amount to add VAT to"
+            autocomplete="off"
+          >
+          <button class="clear-btn" data-target="add" aria-label="Clear add VAT input">Clear</button>
+        </div>
+        <p class="input-hint">Enter the Rand amount to add VAT to</p>
+        <p class="error-msg" id="add-error" role="alert" aria-live="polite"></p>
+      </div>
+
+      <button class="action-btn btn-add" id="add-btn" aria-label="Calculate VAT to add">
+        Add VAT
+      </button>
+
+      <div class="divider"></div>
+
+      <div class="results" aria-live="polite" aria-label="Add VAT results">
+        <div class="result-row">
+          <span class="result-label">Original Amount</span>
+          <span class="result-value" id="add-original">R0.00</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">VAT Amount (@15%)</span>
+          <span class="result-value" id="add-vat">R0.00</span>
+        </div>
+        <div class="result-row result-row--total">
+          <span class="result-label">Amount Including VAT</span>
+          <span class="result-value" id="add-total">R0.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- REMOVE VAT CARD -->
+    <div class="card card--remove" role="region" aria-label="Calculator to Remove VAT">
+      <h2 class="card-title">Remove / Exclude VAT</h2>
+
+      <div class="input-group">
+        <label class="input-label" for="remove-input">Rand Amount</label>
+        <div class="input-row">
+          <span class="currency-prefix" aria-hidden="true">R</span>
+          <input
+            id="remove-input"
+            class="amount-input"
+            type="number"
+            inputmode="decimal"
+            placeholder="0.00"
+            min="0"
+            step="0.01"
+            aria-label="Enter amount to remove VAT from"
+            autocomplete="off"
+          >
+          <button class="clear-btn" data-target="remove" aria-label="Clear remove VAT input">Clear</button>
+        </div>
+        <p class="input-hint">Enter the Rand amount to remove VAT from</p>
+        <p class="error-msg" id="remove-error" role="alert" aria-live="polite"></p>
+      </div>
+
+      <button class="action-btn btn-remove" id="remove-btn" aria-label="Calculate VAT to remove">
+        Remove VAT
+      </button>
+
+      <div class="divider"></div>
+
+      <div class="results" aria-live="polite" aria-label="Remove VAT results">
+        <div class="result-row">
+          <span class="result-label">Original Amount</span>
+          <span class="result-value" id="remove-original">R0.00</span>
+        </div>
+        <div class="result-row">
+          <span class="result-label">VAT Amount (@15%)</span>
+          <span class="result-value" id="remove-vat">R0.00</span>
+        </div>
+        <div class="result-row result-row--total">
+          <span class="result-label">Amount Excluding VAT</span>
+          <span class="result-value" id="remove-total">R0.00</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    VAT @ 15% · South African Revenue Service · SARS
+  </footer>
+</div>
+
+<script src="vat-calculator-sa.js"></script>
+</body>
+</html>
